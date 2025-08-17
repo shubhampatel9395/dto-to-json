@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "ed07e42e-f55c-455e-bc18-2782b9ea0ac7",
+		"name": "DTO to JSON",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17526928"
+	},
+	"item": [
+		{
+			"name": "Parse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"language\": \"JAVA\",\r\n      \"inputTxt\": \"ComplexUserDTO(id=12345L, uuid=550e8400-e29b-41d4-a716-446655440000, name=\\\"John O'Connor\\\", email=\\\"john@example.com\\\", active=true, score=95.75d, balance=1000.50f, age=30, status=ACTIVE, createdDate=2023-12-25, lastLogin=2023-12-25T10:30:45, profile=ProfileDTO(firstName=\\\"John\\\", lastName=\\\"O'Connor\\\", bio=\\\"Software engineer with 5+ years experience.\\\", avatar='J', preferences=[\\\"email\\\", \\\"sms\\\", \\\"push\\\"]), addresses=[AddressDTO(type=HOME, street=\\\"123 Main St\\\", city=\\\"New York\\\", zipCode=\\\"10001\\\", country=\\\"USA\\\", coordinates=CoordinateDTO(lat=40.7128, lng=-74.0060)), AddressDTO(type=WORK, street=\\\"456 Business Ave\\\", city=\\\"Manhattan\\\", zipCode=\\\"10002\\\", country=\\\"USA\\\", coordinates=null)], metadata={\\\"theme\\\"=\\\"dark\\\", \\\"language\\\"=\\\"en\\\", \\\"notifications\\\"=true, \\\"maxLoginAttempts\\\"=3}, permissions=[\\\"READ\\\", \\\"WRITE\\\", \\\"DELETE\\\"], socialProfiles={\\\"twitter\\\"=\\\"@johndoe\\\", \\\"linkedin\\\"=\\\"john-doe-123\\\"}, settings=SettingsDTO(theme=DARK, notifications=NotificationDTO(email=true, sms=false, push=true), privacy=PrivacyDTO(profileVisible=true, emailVisible=false)), tags=[], optionalData=null, numbers=[1, 2, 3, 4, 5], mixedArray=[123, \\\"text\\\", true, null, 45.67], emptyMap={})\"\r\n    }\r\n\r\n// {\r\n//       \"language\": \"KOTLIN\",\r\n//       \"inputTxt\": \"ComplexUserData(id=98765L, uuid=\\\"550e8400-e29b-41d4-a716-446655440001\\\", name=\\\"Jane Smith\\\", email=\\\"jane@example.com\\\", isActive=true, score=87.5, balance=2500.75f, age=28u, status=PREMIUM, createdAt=\\\"\\\"\\\"2023-12-25T10:30:45.123Z\\\"\\\"\\\", profile=ProfileData(firstName=\\\"Jane\\\", lastName=\\\"Smith\\\", bio=\\\"Kotlin developer & tech enthusiast\\\", avatar='J', skills=listOf(\\\"Kotlin\\\", \\\"Android\\\", \\\"Spring\\\")), addresses=listOf(AddressData(type=HOME, street=\\\"789 Oak St\\\", city=\\\"Seattle\\\", zipCode=\\\"98101\\\", country=\\\"USA\\\", location=LocationData(latitude=47.6062, longitude=-122.3321)), AddressData(type=OFFICE, street=\\\"321 Tech Blvd\\\", city=\\\"Bellevue\\\", zipCode=\\\"98004\\\", country=\\\"USA\\\", location=null)), preferences=mapOf(\\\"theme\\\" to \\\"light\\\", \\\"language\\\" to \\\"en-US\\\", \\\"autoSave\\\" to true, \\\"maxRetries\\\" to 5), roles=setOf(\\\"ADMIN\\\", \\\"USER\\\", \\\"DEVELOPER\\\"), socialLinks=mutableMapOf(\\\"github\\\" to \\\"jane-dev\\\", \\\"twitter\\\" to \\\"@janesmith\\\"), config=ConfigData(darkMode=false, notifications=NotificationSettings(email=true, push=false, sms=true), privacy=PrivacySettings(showEmail=false, showPhone=true)), tags=arrayOf(\\\"kotlin\\\", \\\"mobile\\\", \\\"backend\\\"), optionalValue=null, numbers=mutableListOf(10, 20, 30), range=1..100, hexValue=0xFF, binaryValue=0b1010, emptyList=listOf(), emptySet=setOf())\"\r\n// }\r\n\r\n// {\r\n//       \"language\": \"CSHARP\",\r\n//       \"inputTxt\": \"new ComplexUserDto { Id = 54321L, Guid = new Guid(\\\"550e8400-e29b-41d4-a716-446655440002\\\"), Name = \\\"Robert Johnson\\\", Email = \\\"robert@company.com\\\", IsActive = true, Score = 92.8m, Balance = 3500.25f, Age = 35, Status = UserStatus.VIP, CreatedDate = new DateTime(2023, 12, 25, 10, 30, 45), Profile = new ProfileDto { FirstName = \\\"Robert\\\", LastName = \\\"Johnson\\\", Bio = @\\\"Senior .NET developer with expertise in:\\n- C# and .NET Core\\n- Azure cloud services\\n- Microservices architecture\\\", Avatar = 'R', Skills = new List<string> { \\\"C#\\\", \\\".NET\\\", \\\"Azure\\\", \\\"SQL Server\\\" } }, Addresses = new List<AddressDto> { new AddressDto { Type = AddressType.Home, Street = \\\"456 Elm Street\\\", City = \\\"Austin\\\", ZipCode = \\\"73301\\\", Country = \\\"USA\\\", Coordinates = new CoordinateDto { Latitude = 30.2672, Longitude = -97.7431 } }, new AddressDto { Type = AddressType.Business, Street = \\\"789 Corporate Dr\\\", City = \\\"Dallas\\\", ZipCode = \\\"75201\\\", Country = \\\"USA\\\", Coordinates = null } }, Settings = new Dictionary<string, object> { [\\\"Theme\\\"] = \\\"Auto\\\", [\\\"Language\\\"] = \\\"en-US\\\", [\\\"EnableNotifications\\\"] = true, [\\\"MaxConcurrentSessions\\\"] = 3 }, Permissions = new[] { \\\"Read\\\", \\\"Write\\\", \\\"Admin\\\" }, SocialProfiles = new Dictionary<string, string> { { \\\"LinkedIn\\\", \\\"robert-johnson-dev\\\" }, { \\\"GitHub\\\", \\\"rjohnson-coder\\\" } }, Configuration = new ConfigDto { Theme = ThemeMode.Auto, Notifications = new NotificationDto { Email = true, SMS = false, Push = true, InApp = true }, Privacy = new PrivacyDto { ProfilePublic = false, EmailVisible = true, PhoneVisible = false } }, Tags = new string[] { }, OptionalData = null, Statistics = new { TotalLogins = 156, LastLoginDays = 2, FavoriteFeatures = new[] { \\\"Dashboard\\\", \\\"Reports\\\" } }, Numbers = new int[] { 100, 200, 300 }, MixedCollection = new object[] { 999, \\\"sample\\\", true, null, 123.45 }, EmptyList = new List<object>(), EmptyDict = new Dictionary<string, object>() }\"\r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9901/project/parser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9901",
+					"path": [
+						"project",
+						"parser"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Parse",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"language\": \"JAVA\",\r\n      \"inputTxt\": \"ComplexUserDTO(id=12345L, uuid=550e8400-e29b-41d4-a716-446655440000, name=\\\"John O'Connor\\\", email=\\\"john@example.com\\\", active=true, score=95.75d, balance=1000.50f, age=30, status=ACTIVE, createdDate=2023-12-25, lastLogin=2023-12-25T10:30:45, profile=ProfileDTO(firstName=\\\"John\\\", lastName=\\\"O'Connor\\\", bio=\\\"Software engineer with 5+ years experience.\\\", avatar='J', preferences=[\\\"email\\\", \\\"sms\\\", \\\"push\\\"]), addresses=[AddressDTO(type=HOME, street=\\\"123 Main St\\\", city=\\\"New York\\\", zipCode=\\\"10001\\\", country=\\\"USA\\\", coordinates=CoordinateDTO(lat=40.7128, lng=-74.0060)), AddressDTO(type=WORK, street=\\\"456 Business Ave\\\", city=\\\"Manhattan\\\", zipCode=\\\"10002\\\", country=\\\"USA\\\", coordinates=null)], metadata={\\\"theme\\\"=\\\"dark\\\", \\\"language\\\"=\\\"en\\\", \\\"notifications\\\"=true, \\\"maxLoginAttempts\\\"=3}, permissions=[\\\"READ\\\", \\\"WRITE\\\", \\\"DELETE\\\"], socialProfiles={\\\"twitter\\\"=\\\"@johndoe\\\", \\\"linkedin\\\"=\\\"john-doe-123\\\"}, settings=SettingsDTO(theme=DARK, notifications=NotificationDTO(email=true, sms=false, push=true), privacy=PrivacyDTO(profileVisible=true, emailVisible=false)), tags=[], optionalData=null, numbers=[1, 2, 3, 4, 5], mixedArray=[123, \\\"text\\\", true, null, 45.67], emptyMap={})\"\r\n    }\r\n\r\n// {\r\n//       \"language\": \"KOTLIN\",\r\n//       \"inputTxt\": \"ComplexUserData(id=98765L, uuid=\\\"550e8400-e29b-41d4-a716-446655440001\\\", name=\\\"Jane Smith\\\", email=\\\"jane@example.com\\\", isActive=true, score=87.5, balance=2500.75f, age=28u, status=PREMIUM, createdAt=\\\"\\\"\\\"2023-12-25T10:30:45.123Z\\\"\\\"\\\", profile=ProfileData(firstName=\\\"Jane\\\", lastName=\\\"Smith\\\", bio=\\\"Kotlin developer & tech enthusiast\\\", avatar='J', skills=listOf(\\\"Kotlin\\\", \\\"Android\\\", \\\"Spring\\\")), addresses=listOf(AddressData(type=HOME, street=\\\"789 Oak St\\\", city=\\\"Seattle\\\", zipCode=\\\"98101\\\", country=\\\"USA\\\", location=LocationData(latitude=47.6062, longitude=-122.3321)), AddressData(type=OFFICE, street=\\\"321 Tech Blvd\\\", city=\\\"Bellevue\\\", zipCode=\\\"98004\\\", country=\\\"USA\\\", location=null)), preferences=mapOf(\\\"theme\\\" to \\\"light\\\", \\\"language\\\" to \\\"en-US\\\", \\\"autoSave\\\" to true, \\\"maxRetries\\\" to 5), roles=setOf(\\\"ADMIN\\\", \\\"USER\\\", \\\"DEVELOPER\\\"), socialLinks=mutableMapOf(\\\"github\\\" to \\\"jane-dev\\\", \\\"twitter\\\" to \\\"@janesmith\\\"), config=ConfigData(darkMode=false, notifications=NotificationSettings(email=true, push=false, sms=true), privacy=PrivacySettings(showEmail=false, showPhone=true)), tags=arrayOf(\\\"kotlin\\\", \\\"mobile\\\", \\\"backend\\\"), optionalValue=null, numbers=mutableListOf(10, 20, 30), range=1..100, hexValue=0xFF, binaryValue=0b1010, emptyList=listOf(), emptySet=setOf())\"\r\n// }\r\n\r\n// {\r\n//       \"language\": \"CSHARP\",\r\n//       \"inputTxt\": \"new ComplexUserDto { Id = 54321L, Guid = new Guid(\\\"550e8400-e29b-41d4-a716-446655440002\\\"), Name = \\\"Robert Johnson\\\", Email = \\\"robert@company.com\\\", IsActive = true, Score = 92.8m, Balance = 3500.25f, Age = 35, Status = UserStatus.VIP, CreatedDate = new DateTime(2023, 12, 25, 10, 30, 45), Profile = new ProfileDto { FirstName = \\\"Robert\\\", LastName = \\\"Johnson\\\", Bio = @\\\"Senior .NET developer with expertise in:\\n- C# and .NET Core\\n- Azure cloud services\\n- Microservices architecture\\\", Avatar = 'R', Skills = new List<string> { \\\"C#\\\", \\\".NET\\\", \\\"Azure\\\", \\\"SQL Server\\\" } }, Addresses = new List<AddressDto> { new AddressDto { Type = AddressType.Home, Street = \\\"456 Elm Street\\\", City = \\\"Austin\\\", ZipCode = \\\"73301\\\", Country = \\\"USA\\\", Coordinates = new CoordinateDto { Latitude = 30.2672, Longitude = -97.7431 } }, new AddressDto { Type = AddressType.Business, Street = \\\"789 Corporate Dr\\\", City = \\\"Dallas\\\", ZipCode = \\\"75201\\\", Country = \\\"USA\\\", Coordinates = null } }, Settings = new Dictionary<string, object> { [\\\"Theme\\\"] = \\\"Auto\\\", [\\\"Language\\\"] = \\\"en-US\\\", [\\\"EnableNotifications\\\"] = true, [\\\"MaxConcurrentSessions\\\"] = 3 }, Permissions = new[] { \\\"Read\\\", \\\"Write\\\", \\\"Admin\\\" }, SocialProfiles = new Dictionary<string, string> { { \\\"LinkedIn\\\", \\\"robert-johnson-dev\\\" }, { \\\"GitHub\\\", \\\"rjohnson-coder\\\" } }, Configuration = new ConfigDto { Theme = ThemeMode.Auto, Notifications = new NotificationDto { Email = true, SMS = false, Push = true, InApp = true }, Privacy = new PrivacyDto { ProfilePublic = false, EmailVisible = true, PhoneVisible = false } }, Tags = new string[] { }, OptionalData = null, Statistics = new { TotalLogins = 156, LastLoginDays = 2, FavoriteFeatures = new[] { \\\"Dashboard\\\", \\\"Reports\\\" } }, Numbers = new int[] { 100, 200, 300 }, MixedCollection = new object[] { 999, \\\"sample\\\", true, null, 123.45 }, EmptyList = new List<object>(), EmptyDict = new Dictionary<string, object>() }\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9901/project/parser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9901",
+							"path": [
+								"project",
+								"parser"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Aug 2025 17:16:47 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"detail.message\",\n    \"data\": {\n        \"id\": 12345,\n        \"uuid\": \"550e8400-e29b-41d4-a716-446655440000\",\n        \"name\": \"John O'Connor\",\n        \"email\": \"john@example.com\",\n        \"active\": true,\n        \"score\": 95.75,\n        \"balance\": 1000.5,\n        \"age\": 30,\n        \"status\": \"ACTIVE\",\n        \"createdDate\": \"2023-12-25\",\n        \"lastLogin\": \"2023-12-25T10:30:45\",\n        \"profile\": {\n            \"firstName\": \"John\",\n            \"lastName\": \"O'Connor\",\n            \"bio\": \"Software engineer with 5+ years experience.\",\n            \"avatar\": \"J\",\n            \"preferences\": [\n                \"email\",\n                \"sms\",\n                \"push\"\n            ]\n        },\n        \"addresses\": [\n            {\n                \"type\": \"HOME\",\n                \"street\": \"123 Main St\",\n                \"city\": \"New York\",\n                \"zipCode\": \"10001\",\n                \"country\": \"USA\",\n                \"coordinates\": {\n                    \"lat\": 40.7128,\n                    \"lng\": -74.006\n                }\n            },\n            {\n                \"type\": \"WORK\",\n                \"street\": \"456 Business Ave\",\n                \"city\": \"Manhattan\",\n                \"zipCode\": \"10002\",\n                \"country\": \"USA\",\n                \"coordinates\": null\n            }\n        ],\n        \"metadata\": {\n            \"theme\": \"dark\",\n            \"language\": \"en\",\n            \"notifications\": true,\n            \"maxLoginAttempts\": 3\n        },\n        \"permissions\": [\n            \"READ\",\n            \"WRITE\",\n            \"DELETE\"\n        ],\n        \"socialProfiles\": {\n            \"twitter\": \"@johndoe\",\n            \"linkedin\": \"john-doe-123\"\n        },\n        \"settings\": {\n            \"theme\": \"DARK\",\n            \"notifications\": {\n                \"email\": true,\n                \"sms\": false,\n                \"push\": true\n            },\n            \"privacy\": {\n                \"profileVisible\": true,\n                \"emailVisible\": false\n            }\n        },\n        \"tags\": [],\n        \"optionalData\": null,\n        \"numbers\": [\n            1,\n            2,\n            3,\n            4,\n            5\n        ],\n        \"mixedArray\": [\n            123,\n            \"text\",\n            true,\n            null,\n            45.67\n        ],\n        \"emptyMap\": {}\n    },\n    \"status\": 200\n}"
+				}
+			]
+		}
+	]
+}

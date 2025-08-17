@@ -1,0 +1,43 @@
+spring:
+  profiles:
+    active:
+      - dev
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        '[format_sql]': true
+        jdbc:
+          lob:
+            '[non_contextual_creation]': true
+    hibernate:
+      ddl-auto: none
+  main:
+    allow-bean-definition-overriding: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 70MB
+  application:
+    name: DTO to JSON
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/json_db
+    username: json_project
+    password: json_project
+
+server:
+  port: 9901
+  servlet:
+    context-path: /project
+
+local:
+  service:
+    url: http://localhost:9901/project/
